@@ -11,17 +11,12 @@
             "id": "7de34acf6d99d1fd",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "image",
               "state": {
-                "file": "Some android stuff.canvas",
-                "viewState": {
-                  "x": -89.15367500480147,
-                  "y": -2651.6778954966194,
-                  "zoom": -0.8308475875205058
-                }
+                "file": "Pasted image 20250602140151.png"
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "Some android stuff"
+              "icon": "lucide-image",
+              "title": "Pasted image 20250602140151"
             }
           }
         ]
@@ -166,8 +161,9 @@
       "templates:Insert template": false
     }
   },
-  "active": "ebc4ea967b699565",
+  "active": "7de34acf6d99d1fd",
   "lastOpenFiles": [
+    "Some android stuff.canvas",
     "Pomodoro Bot.canvas",
     "Patterns.canvas",
     "Advanced python + some web + some db.canvas",
@@ -191,7 +187,6 @@
     "Jetpack Compose.md",
     "Internet basics.canvas",
     "eb2d6637.png",
-    "DoubleHashTable.canvas",
     "Coroutines.md",
     "App architecture.md",
     "todo MVVM.md",
