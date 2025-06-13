@@ -11,12 +11,17 @@
             "id": "7de34acf6d99d1fd",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "canvas",
               "state": {
-                "file": "Pasted image 20250602140151.png"
+                "file": "Bash.canvas",
+                "viewState": {
+                  "x": 1207,
+                  "y": 2680.5,
+                  "zoom": -3.228391161957891
+                }
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20250602140151"
+              "icon": "lucide-layout-dashboard",
+              "title": "Bash"
             }
           }
         ]
@@ -163,12 +168,13 @@
   },
   "active": "7de34acf6d99d1fd",
   "lastOpenFiles": [
+    "Advanced python + some web + some db.canvas",
+    "Assistant.canvas",
+    "Pasted image 20250602140151.png",
     "Some android stuff.canvas",
     "Pomodoro Bot.canvas",
     "Patterns.canvas",
-    "Advanced python + some web + some db.canvas",
     "Bash.canvas",
-    "Assistant.canvas",
     "Compose.md",
     "Pasted image 20250610120613.png",
     "Pasted image 20250610101027.png",
@@ -185,13 +191,11 @@
     "States in Compose.md",
     "Networks.canvas",
     "Jetpack Compose.md",
-    "Internet basics.canvas",
     "eb2d6637.png",
     "Coroutines.md",
     "App architecture.md",
     "todo MVVM.md",
     "Pasted image 20250601193340.png",
-    "Pasted image 20250601192859.png",
     "Untitled.md",
     "Welcome.md"
   ]

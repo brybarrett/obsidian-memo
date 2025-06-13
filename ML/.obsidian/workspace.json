@@ -4,24 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "72589867948f094a",
+        "id": "4a0f7768e82faa2b",
         "type": "tabs",
         "children": [
           {
-            "id": "756f844db1f23195",
+            "id": "1c8e7a1232cfd5a2",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Untitled 2.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
+                "file": "Time series.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "Untitled 2"
+              "icon": "lucide-file",
+              "title": "Time series"
             }
           }
         ]
@@ -77,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -163,36 +159,36 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "756f844db1f23195",
+  "active": "1c8e7a1232cfd5a2",
   "lastOpenFiles": [
-    "SQL.canvas",
-    "Untitled 2.canvas",
-    "Untitled 1.canvas",
-    "Untitled.canvas",
-    "Untitled.md",
+    "Screenshot_20250109_170651.png",
+    "2025-04-07_18-39-21.png",
     "ML map.canvas",
     "NLP + RL.canvas",
-    "LangGraph.canvas",
-    "Probability & SP.canvas",
-    "Python.canvas",
-    "Risk.canvas",
-    "RAG.canvas",
-    "Q ML.md",
-    "Screenshot_20250420_210248.png",
-    "Screenshot_20250306_220444.png",
-    "Statistics.md",
-    "2025-04-07_18-39-21.png",
-    "Screenshot 2025-04-15 at 11-23-03 MVC - MDN Web Docs Glossary Definitions of Web-related terms MDN.png",
-    "Time series.md",
-    "2 L1.md",
-    "Screenshot_20250109_172646.png",
-    "SQL.md",
-    "RNN-vs-LSTM-vs-GRU-1024x308.png",
     "Pasted image 20250109172218.png",
-    "2025-02-23.md",
+    "RAG.canvas",
+    "RNN-vs-LSTM-vs-GRU-1024x308.png",
+    "Screenshot 2025-04-15 at 11-23-03 MVC - MDN Web Docs Glossary Definitions of Web-related terms MDN.png",
+    "Screenshot_20250109_172646.png",
     "Screenshot_20250121_161804.png",
+    "Screenshot_20250306_220444.png",
+    "Time series.md",
+    "Screenshot_20250420_210248.png",
+    "Statistics_canvas.canvas",
+    "Probability & SP.canvas",
+    "Strivers.canvas",
+    "Statistics.md",
+    "LangGraph.canvas",
+    "SQL.canvas",
+    "Risk.canvas",
+    "Risk 1.canvas",
+    "Q ML.md",
+    "2025-06-14.md",
+    "2025-02-23.md",
+    "2 L1.md",
+    "Untitled.md",
+    "SQL.md",
     "L1.md",
-    "Screenshot_20250109_170651.png",
     "Untitled 1.md",
     "ML mind map.md",
     "Welcome.md"
