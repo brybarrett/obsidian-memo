@@ -80,28 +80,6 @@
       "y": 1020
     },
     {
-      "height": 654,
-      "id": "00999e21dfb8739f",
-      "styleAttributes": {
-      },
-      "text": "### Basic Script Structure\n\n```bash\n#!/bin/bash\n# Shebang line - specifies interpreter\n\n# Variables\nname=\"John\"\nage=25\nreadonly CONSTANT=\"unchangeable\"\n\n# Command substitution\ncurrent_date=$(date)\nfile_count=`ls | wc -l`  # Alternative syntax\n\necho \"Hello $name, you are $age years old\"\necho \"Today is $current_date\"\n```\n\n",
-      "type": "text",
-      "width": 642,
-      "x": -479,
-      "y": 2345
-    },
-    {
-      "height": 945,
-      "id": "570778799e3ba0bb",
-      "styleAttributes": {
-      },
-      "text": "### Functions\n```bash\n# Function definition\nbackup_file() {\n    local source_file=$1\n    local backup_dir=$2\n    \n    if [ -f \"$source_file\" ]; then\n        cp \"$source_file\" \"$backup_dir/\"\n        echo \"Backed up $source_file\"\n    else\n        echo \"File $source_file not found\"\n        return 1\n    fi\n}\n\n# Function call\nbackup_file \"important.txt\" \"/backup\"\n```\n### Arrays\n\n```bash\n# Array declaration\nfruits=(\"apple\" \"banana\" \"orange\")\nnumbers=(1 2 3 4 5)\n\n# Accessing elements\necho ${fruits[0]}        # First element\necho ${fruits[@]}        # All elements\necho ${#fruits[@]}       # Array length\n\n# Adding elements\nfruits+=(\"grape\")\n\n# Iterating\nfor fruit in \"${fruits[@]}\"; do\n    echo \"Fruit: $fruit\"\ndone\n```",
-      "type": "text",
-      "width": 880,
-      "x": 1022,
-      "y": 2345
-    },
-    {
       "height": 1097,
       "id": "17fd4dbbf474f72a",
       "styleAttributes": {
@@ -110,17 +88,6 @@
       "type": "text",
       "width": 938,
       "x": 1956,
-      "y": 2345
-    },
-    {
-      "height": 1574,
-      "id": "27165fb5dd9081ae",
-      "styleAttributes": {
-      },
-      "text": "### Conditional statements\n\n```bash\n# If-else structure\nif [ $age -gt 18 ]; then\n    echo \"Adult\"\nelif [ $age -eq 18 ]; then\n    echo \"Just turned adult\"\nelse\n    echo \"Minor\"\nfi\n\n# File tests\nif [ -f \"file.txt\" ]; then\n    echo \"File exists\"\nfi\n\nif [ -d \"directory\" ]; then\n    echo \"Directory exists\"\nfi\n\n# String comparisons\nif [ \"$string1\" = \"$string2\" ]; then\n    echo \"Strings are equal\"\nfi\n\nif [ -z \"$variable\" ]; then\n    echo \"Variable is empty\"\nfi\n```\n\n### Loops\n\n```bash\n# For loop with range\nfor i in {1..10}; do\n    echo \"Number: $i\"\ndone\n\n# For loop with files\nfor file in *.txt; do\n    echo \"Processing $file\"\n    # Process file\ndone\n\n# While loop\ncounter=1\nwhile [ $counter -le 10 ]; do\n    echo \"Counter: $counter\"\n    ((counter++))\ndone\n\n# Until loop\nuntil [ $counter -gt 10 ]; do\n    echo \"Counter: $counter\"\n    ((counter++))\ndone\n```",
-      "type": "text",
-      "width": 772,
-      "x": 195,
       "y": 2345
     },
     {
@@ -177,17 +144,6 @@
       "width": 391,
       "x": -21,
       "y": 5080
-    },
-    {
-      "height": 588,
-      "id": "edf2e8a626eace73",
-      "styleAttributes": {
-      },
-      "text": "### Error Handling\n\n```bash\n# Exit on error\nset -e                   # Exit if any command fails\nset -u                   # Exit if undefined variable used\nset -o pipefail         # Exit if any command in pipeline fails\n\n# Custom error handling\nerror_exit() {\n    echo \"Error: $1\" >&2\n    exit 1\n}\n\n# Usage\n[ -f \"required_file.txt\" ] || error_exit \"Required file not found\"\n```",
-      "type": "text",
-      "width": 880,
-      "x": 1022,
-      "y": 3331
     },
     {
       "height": 414,
@@ -276,6 +232,50 @@
       "width": 439,
       "x": 863,
       "y": 4340
+    },
+    {
+      "height": 654,
+      "id": "00999e21dfb8739f",
+      "styleAttributes": {
+      },
+      "text": "### Basic Script Structure\n\n```bash\n#!/bin/bash\n# Shebang line - specifies interpreter\n\n# Variables\nname=\"John\"\nage=25\nreadonly CONSTANT=\"unchangeable\"\n\n# Command substitution\ncurrent_date=$(date)\nfile_count=`ls | wc -l`  # Alternative syntax\n\necho \"Hello $name, you are $age years old\"\necho \"Today is $current_date\"\n```\n\n",
+      "type": "text",
+      "width": 642,
+      "x": -479,
+      "y": 2345
+    },
+    {
+      "height": 945,
+      "id": "570778799e3ba0bb",
+      "styleAttributes": {
+      },
+      "text": "### Functions\n```bash\n# Function definition\nbackup_file() {\n    local source_file=$1\n    local backup_dir=$2\n    \n    if [ -f \"$source_file\" ]; then\n        cp \"$source_file\" \"$backup_dir/\"\n        echo \"Backed up $source_file\"\n    else\n        echo \"File $source_file not found\"\n        return 1\n    fi\n}\n\n# Function call\nbackup_file \"important.txt\" \"/backup\"\n```\n### Arrays\n\n```bash\n# Array declaration\nfruits=(\"apple\" \"banana\" \"orange\")\nnumbers=(1 2 3 4 5)\n\n# Accessing elements\necho ${fruits[0]}        # First element\necho ${fruits[@]}        # All elements\necho ${#fruits[@]}       # Array length\n\n# Adding elements\nfruits+=(\"grape\")\n\n# Iterating\nfor fruit in \"${fruits[@]}\"; do\n    echo \"Fruit: $fruit\"\ndone\n```",
+      "type": "text",
+      "width": 880,
+      "x": 1022,
+      "y": 2345
+    },
+    {
+      "height": 1574,
+      "id": "27165fb5dd9081ae",
+      "styleAttributes": {
+      },
+      "text": "### Conditional statements\n\n```bash\n# If-else structure\nif [ $age -gt 18 ]; then\n    echo \"Adult\"\nelif [ $age -eq 18 ]; then\n    echo \"Just turned adult\"\nelse\n    echo \"Minor\"\nfi\n\n# File tests\nif [ -f \"file.txt\" ]; then\n    echo \"File exists\"\nfi\n\nif [ -d \"directory\" ]; then\n    echo \"Directory exists\"\nfi\n\n# String comparisons\nif [ \"$string1\" = \"$string2\" ]; then\n    echo \"Strings are equal\"\nfi\n\nif [ -z \"$variable\" ]; then\n    echo \"Variable is empty\"\nfi\n```\n\n### Loops\n\n```bash\n# For loop with range\nfor i in {1..10}; do\n    echo \"Number: $i\"\ndone\n\n# For loop with files\nfor file in *.txt; do\n    echo \"Processing $file\"\n    # Process file\ndone\n\n# While loop\ncounter=1\nwhile [ $counter -le 10 ]; do\n    echo \"Counter: $counter\"\n    ((counter++))\ndone\n\n# Until loop\nuntil [ $counter -gt 10 ]; do\n    echo \"Counter: $counter\"\n    ((counter++))\ndone\n```",
+      "type": "text",
+      "width": 772,
+      "x": 195,
+      "y": 2345
+    },
+    {
+      "height": 588,
+      "id": "edf2e8a626eace73",
+      "styleAttributes": {
+      },
+      "text": "### Error Handling\n\n```bash\n# Exit on error\nset -e                   # Exit if any command fails\nset -u                   # Exit if undefined variable used\nset -o pipefail         # Exit if any command in pipeline fails\n\n# Custom error handling\nerror_exit() {\n    echo \"Error: $1\" >&2\n    exit 1\n}\n\n# Usage\n[ -f \"required_file.txt\" ] || error_exit \"Required file not found\"\n```",
+      "type": "text",
+      "width": 880,
+      "x": 1022,
+      "y": 3331
     }
   ]
 }
