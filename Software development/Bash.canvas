@@ -113,6 +113,17 @@
       "y": 2345
     },
     {
+      "height": 1574,
+      "id": "27165fb5dd9081ae",
+      "styleAttributes": {
+      },
+      "text": "### Conditional statements\n\n```bash\n# If-else structure\nif [ $age -gt 18 ]; then\n    echo \"Adult\"\nelif [ $age -eq 18 ]; then\n    echo \"Just turned adult\"\nelse\n    echo \"Minor\"\nfi\n\n# File tests\nif [ -f \"file.txt\" ]; then\n    echo \"File exists\"\nfi\n\nif [ -d \"directory\" ]; then\n    echo \"Directory exists\"\nfi\n\n# String comparisons\nif [ \"$string1\" = \"$string2\" ]; then\n    echo \"Strings are equal\"\nfi\n\nif [ -z \"$variable\" ]; then\n    echo \"Variable is empty\"\nfi\n```\n\n### Loops\n\n```bash\n# For loop with range\nfor i in {1..10}; do\n    echo \"Number: $i\"\ndone\n\n# For loop with files\nfor file in *.txt; do\n    echo \"Processing $file\"\n    # Process file\ndone\n\n# While loop\ncounter=1\nwhile [ $counter -le 10 ]; do\n    echo \"Counter: $counter\"\n    ((counter++))\ndone\n\n# Until loop\nuntil [ $counter -gt 10 ]; do\n    echo \"Counter: $counter\"\n    ((counter++))\ndone\n```",
+      "type": "text",
+      "width": 772,
+      "x": 195,
+      "y": 2345
+    },
+    {
       "height": 357,
       "id": "699b7878b67eb51c",
       "styleAttributes": {
@@ -157,17 +168,6 @@
       "y": 5306
     },
     {
-      "height": 1574,
-      "id": "27165fb5dd9081ae",
-      "styleAttributes": {
-      },
-      "text": "### Conditional statements\n\n```bash\n# If-else structure\nif [ $age -gt 18 ]; then\n    echo \"Adult\"\nelif [ $age -eq 18 ]; then\n    echo \"Just turned adult\"\nelse\n    echo \"Minor\"\nfi\n\n# File tests\nif [ -f \"file.txt\" ]; then\n    echo \"File exists\"\nfi\n\nif [ -d \"directory\" ]; then\n    echo \"Directory exists\"\nfi\n\n# String comparisons\nif [ \"$string1\" = \"$string2\" ]; then\n    echo \"Strings are equal\"\nfi\n\nif [ -z \"$variable\" ]; then\n    echo \"Variable is empty\"\nfi\n```\n\n### Loops\n\n```bash\n# For loop with range\nfor i in {1..10}; do\n    echo \"Number: $i\"\ndone\n\n# For loop with files\nfor file in *.txt; do\n    echo \"Processing $file\"\n    # Process file\ndone\n\n# While loop\ncounter=1\nwhile [ $counter -le 10 ]; do\n    echo \"Counter: $counter\"\n    ((counter++))\ndone\n\n# Until loop\nuntil [ $counter -gt 10 ]; do\n    echo \"Counter: $counter\"\n    ((counter++))\ndone\n```",
-      "type": "text",
-      "width": 772,
-      "x": 195,
-      "y": 2345
-    },
-    {
       "height": 498,
       "id": "65e91185cb7d1005",
       "styleAttributes": {
@@ -177,6 +177,50 @@
       "width": 391,
       "x": -21,
       "y": 5080
+    },
+    {
+      "height": 588,
+      "id": "edf2e8a626eace73",
+      "styleAttributes": {
+      },
+      "text": "### Error Handling\n\n```bash\n# Exit on error\nset -e                   # Exit if any command fails\nset -u                   # Exit if undefined variable used\nset -o pipefail         # Exit if any command in pipeline fails\n\n# Custom error handling\nerror_exit() {\n    echo \"Error: $1\" >&2\n    exit 1\n}\n\n# Usage\n[ -f \"required_file.txt\" ] || error_exit \"Required file not found\"\n```",
+      "type": "text",
+      "width": 880,
+      "x": 1022,
+      "y": 3331
+    },
+    {
+      "height": 414,
+      "id": "a7794662766e9794",
+      "styleAttributes": {
+      },
+      "text": "## While loops\n\n```bash\n#!/bin/bash\n\ni=0\nwhile [ $i -lt 10 ]\ndo\n    echo $i\n    i=$(( $i + 1 ))\n    sleep 0.5\ndone\n\n```\n\n`grep -q \"Arch\" $release_file`",
+      "type": "text",
+      "width": 421,
+      "x": 404,
+      "y": 4340
+    },
+    {
+      "height": 614,
+      "id": "93cc5eaa4c44455a",
+      "styleAttributes": {
+      },
+      "text": "## Fors\n\n```bash\n#!/bin/bash\n\nfor current_number in 1 2 3 4 5\ndo\n    echo $current_number\n    sleep 0.5\ndone\n\n\nfor current_number in {6..10}\ndo\n    echo $current_number\n    sleep 0.5\ndone\n\n\necho \"End.\"\n```\n\n```bash\n#!/bin/bash\n\nfor file in logfiles/*.log\ndo\n\ttar -czvf $file.tar.gz $file\ndone\n```",
+      "type": "text",
+      "width": 421,
+      "x": 404,
+      "y": 4792
+    },
+    {
+      "height": 148,
+      "id": "205d6320229477fb",
+      "styleAttributes": {
+      },
+      "text": "## Where to store\n`/usr/local/bin/`\n`echo path`\n`export PATH=/usr/local/bin:$PATH`",
+      "type": "text",
+      "width": 421,
+      "x": 404,
+      "y": 5430
     },
     {
       "height": 590,
@@ -232,50 +276,6 @@
       "width": 439,
       "x": 863,
       "y": 4340
-    },
-    {
-      "height": 588,
-      "id": "edf2e8a626eace73",
-      "styleAttributes": {
-      },
-      "text": "### Error Handling\n\n```bash\n# Exit on error\nset -e                   # Exit if any command fails\nset -u                   # Exit if undefined variable used\nset -o pipefail         # Exit if any command in pipeline fails\n\n# Custom error handling\nerror_exit() {\n    echo \"Error: $1\" >&2\n    exit 1\n}\n\n# Usage\n[ -f \"required_file.txt\" ] || error_exit \"Required file not found\"\n```",
-      "type": "text",
-      "width": 880,
-      "x": 1022,
-      "y": 3331
-    },
-    {
-      "height": 414,
-      "id": "a7794662766e9794",
-      "styleAttributes": {
-      },
-      "text": "## While loops\n\n```bash\n#!/bin/bash\n\ni=0\nwhile [ $i -lt 10 ]\ndo\n    echo $i\n    i=$(( $i + 1 ))\n    sleep 0.5\ndone\n\n```\n\n`grep -q \"Arch\" $release_file`",
-      "type": "text",
-      "width": 421,
-      "x": 404,
-      "y": 4340
-    },
-    {
-      "height": 614,
-      "id": "93cc5eaa4c44455a",
-      "styleAttributes": {
-      },
-      "text": "## Fors\n\n```bash\n#!/bin/bash\n\nfor current_number in 1 2 3 4 5\ndo\n    echo $current_number\n    sleep 0.5\ndone\n\n\nfor current_number in {6..10}\ndo\n    echo $current_number\n    sleep 0.5\ndone\n\n\necho \"End.\"\n```\n\n```bash\n#!/bin/bash\n\nfor file in logfiles/*.log\ndo\n\ttar -czvf $file.tar.gz $file\ndone\n```",
-      "type": "text",
-      "width": 421,
-      "x": 404,
-      "y": 4792
-    },
-    {
-      "height": 148,
-      "id": "205d6320229477fb",
-      "styleAttributes": {
-      },
-      "text": "## Where to store\n`/usr/local/bin/`\n`echo path`\n`export PATH=/usr/local/bin:$PATH`",
-      "type": "text",
-      "width": 421,
-      "x": 404,
-      "y": 5430
     }
   ]
 }
