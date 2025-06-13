@@ -36,37 +36,15 @@
       "y": -1090
     },
     {
-      "height": 909,
-      "id": "35b54aba03edaddf",
+      "height": 1374,
+      "id": "aab7542d0645df91",
       "styleAttributes": {
       },
-      "text": "### Payload\n- Payload - данные, которые клиент отправляет серверу в теле HTTP-запроса\n- Не во всех методах есть payload (e.g. GET без тела)\n- Часто это форматированный текст - JSON, XML, form-data, бинарные данные\n\nПример payload\n\nPOST /api/user:\n```json\n{\n\t\"name\": \"Alice\",\n\t\"email\": \"alice@example.com\"\n}\n```\nВ заголовках тип содержимого:\n```pgsql\nContent-Type: application/json\n```\n\nПример запроса:\n\n```makefile\nPOST /api/user HTTP/1.1\nHost: example.com\nContent-Type: application/json\nContent-Length: 47\n\n{\n  \"name\": \"Alice\",\n  \"email\": \"alice@example.com\"\n}\n```\n\n- Клиент формирует байтовый поток, где тело (payload) идёт после заголовков\n- Этот поток дробится на TCP-сегменты и отправляется на сервер\n- Сервер собирает сегменты, читает HTTP-запрос, парсит payload",
+      "text": "### Glossary\n\n- **URL (Unfiorm Resource Locator)** - complete address for any resource on the internet, like a street address for web content. A URL like `https://api.example.com/users/123?format=json` contains several parts: the protocol (https), the domain (api.example.com), the path (/users/123), and query parameters (?format=json)\n- **Endpoint** - This is a specific URL where your API can receive requests and send back responses. If your API is like a restaurant, endpoints are like the different items on the menu. Each endpoint typically handles one specific function, such as `/users` for getting user data or `/orders` for managing orders. The combination of an HTTP method (GET, POST, etc.) and a URL path creates a unique endpoint\n- **HTTP Methods (Verbs)** - these tell the server what kind of action you want to perform. GET, POST, PUT, PATCH, DELETE\n- **Request and Response** (analogy: question-answer conversation)\n- **Headers** - these are like metadata attached to both requests and responses, providing additional information about the message being sent (Content-Type, Authorization, User-Agent, ...)\n- **Status Codes** - tell you what happened with your request: 200s success (200 OK, 201 Created), 300s redirection, 400s client errors, 500s server errors\n- **JSON (JavaScript Object Notation)** -  `{\"name\": \"John\", \"age\": 30, \"active\": true}`\n- **API (Application Programming Interface)** - a set of rules and specifications that define how different software components can communicate with each other. When we talk about web APIs, we usually mean REST APIs or similar systems that let different applications exchange data over the internet. An API is like a contract that specifies what requests you can make and what responses you'll get back\n- **REST (Representation State Transfer)** - architectural style for designing web APIs that uses standard HTTP methods and follows certain principles. RESTful APIs treat everything as resources (like users, products, or orders) that can be identified by URLs and manipulated using HTTP methods. The beauty of REST is its simplicity and the way it leverages existing web standards.\n- **Client and Server**\n- **Middleware** - This refers to software that sits between different parts of your application, processing requests and responses as they flow through your system\n- **Session and State** - HTTP is stateless by nature, meaning each request is independent and doesn't remember previous requests. Sessions are a way to maintain state across multiple requests from the same user, typically by using cookies or tokens. This allows applications to remember that you're logged in, what's in your shopping cart, or your user preferences across different page visits.\n- **Cookies** - small pieces of data that servers send to browsers, which the browsers then send back with future requests to the same domain. Cookies are commonly used for maintaining user sessions, remembering preferences, or tracking user behavior\n- **Authentication & Authorization** - Authentication answers \"who are you?\" while authorization answers \"what are you allowed to do?\" Authentication typically involves checking credentials like usernames and passwords, while authorization involves checking permissions and roles.\n- **CORS (Cross-Origin Resource Sharing)** - a security feature implemented by web browsers that controls which websites can make requests to your API. By default, browsers block requests from one domain to another (like from example.com to api.otherdomain.com) unless the receiving server explicitly allows it through CORS headers\n- **Webhook** - a way for one application to automatically notify another application when something happens, rather than the second application constantly checking for updates\n- **Database and ORM** - Databases store your application's persistent data, while an ORM (Object-Relational Mapping) is a tool that lets you work with database data using your programming language's objects instead of writing raw SQL queries\n- **Environment Variables** - values that exist outside your code, typically used for configuration settings that change between different environments\n- **SSL/TLS and HTTPS** - SSL (Secure Sockets Layer) and its successor TLS (Transport Layer Security) are protocols that encrypt data traveling between clients and servers. HTTPS is HTTP over an encrypted connection, ensuring that sensitive data like passwords or credit card numbers can't be intercepted. The little lock icon in your browser indicates that HTTPS is being used",
       "type": "text",
-      "width": 1210,
-      "x": -660,
-      "y": 2417
-    },
-    {
-      "height": 1072,
-      "id": "fe67d292a51a0c0b",
-      "styleAttributes": {
-      },
-      "text": "### HTTP методы\n| Метод   | Назначение                    | Краткое описание                                                                                  | Пример запроса                                 | Пояснение к примеру                                                           |\n| ------- | ----------------------------- | ------------------------------------------------------------------------------------------------- | ---------------------------------------------- | ----------------------------------------------------------------------------- |\n| GET     | Запрос ресурса                | Клиент просит получить данные с сервера. Обычно без тела запроса.                                 | `GET /api/users/123 HTTP/1.1`                  | Получить данные пользователя с id=123 без отправки тела запроса               |\n| POST    | Создание ресурса или действие | Клиент отправляет данные на сервер (создание ресурса или выполнение действия). Есть тело (payload | `POST /api/users HTTP/1.1` с JSON-payload <br> | Создать нового пользователя, отправляя его данные в теле запроса.             |\n| PUT     | Полное обновление ресурса     | Клиент заменяет ресурс на сервере полностью. Обычно с телом запроса.                              | `DELETE /api/users/123 HTTP/1.1`               | Удалить пользователя с id=123. Обычно без тела запроса.                       |\n| PATCH   | Частичное обновление ресурса  | Клиент частично обновляет ресурс, передавая изменения. С телом запроса                            |                                                |                                                                               |\n| DELETE  | Удаление ресурса              | Клиент просит удалить ресурс. Обычно без тела                                                     |                                                |                                                                               |\n| HEAD    | Запрос заголовков ресурса     | Как GET, но без тела ответа - только заголовки                                                    | `HEAD /api/users/123 HTTP/1.1`                 | Получить только заголовки ответа (например, проверить, существует ли ресурс). |\n| OPTIONS | Запрос поддерживаемых методов | Клиент узнает, какие методы поддерживает сервер для ресурса                                       | `OPTIONS /api/users HTTP/1.1`                  | Узнать, какие HTTP методы поддерживает сервер для этого ресурса.              |\n",
-      "type": "text",
-      "width": 1210,
-      "x": -660,
-      "y": 1323
-    },
-    {
-      "height": 1752,
-      "id": "2fd13f5310f707ba",
-      "styleAttributes": {
-      },
-      "text": "### HTTP\nHTTP (HyperText Transfer Protocol) - essentially a conversation between web browsers and web severs\n\n- The **request line** tells the server what you want to do and where you want to do it:\n\t- HTTP method (like GET, POST)\n\t- Path\n\t- HTTP version\n- The **headers** provide additional context about request (what type of content accept, what browser using, auth info)\n- The **body** (optional) contains data you're sending to the server (form submissions, file uploads)\n\n### Making some requests\n```python\nresponse = requests.get(\"https://httpbin.org/headers\")\n```\n```markdown\nHeaders our browser sent:\nAccept: */*                            # что клиент может принять в ответ - здесь любой тип контента\nAccept-Encoding: gzip, deflate         # какие способы сжатия клиент понимает\nHost: httpbin.org                      # какой домент клиент хочет запросить\nUser-Agent: python-requests/2.32.3     # кто делает запрос\nX-Amzn-Trace-Id: Root=1-683b3986-16d55c1f3f40c9f922e197ff # заголовок от инфраструктуры Amazon\n```\n\n### GET\n- Base URL: `https://example.com/api/users`\n- Query Parameters: `?name=John&age=25&city=Boston`\n- Headers: Authentication tokens, content preferences, browser info\n```\nGET /api/users?name=John&age=25&city=Boston HTTP/1.1\nHost: example.com\nUser-Agent: Mozilla/5.0...\nAuthorization: Bearer abc123\nAccept: application/json\n```\n\nData typically sent:\n- Search terms\n- Filter criteria\n- Page numbers\n- Sorting preferences\n- User preferences\n- API keys\n\n### POST \nLocation of data: primarily in the request body\n**Components:**\n- **URL**: Just the endpoint `https://example.com/api/users`\n- **Headers**: Content type, auth, etc.\n- **Body**: The actual data payload\n\n```\nPOST /api/users HTTP/1.1\nHost: example.com\nContent-Type: application/json\nContent-Length: 156\nAuthorization: Bearer abc123\n\n{\n  \"name\": \"John\",\n  \"email\": \"john@example.com\",\n  \"age\": 25,\n  \"address\": {\n    \"city\": \"Boston\",\n    \"zip\": \"02101\"\n  }\n}\n```",
-      "type": "text",
-      "width": 1210,
-      "x": -660,
-      "y": -685
+      "width": 1036,
+      "x": -2064,
+      "y": -1074
     },
     {
       "height": 1685,
@@ -80,7 +58,7 @@
       "y": -685
     },
     {
-      "file": "Pasted image 20250607140619.png",
+      "file": "Pictures/Pasted image 20250607140619.png",
       "height": 290,
       "id": "3741e7ca85b70074",
       "styleAttributes": {
@@ -111,17 +89,6 @@
       "width": 1496,
       "x": 693,
       "y": 1218
-    },
-    {
-      "height": 1374,
-      "id": "aab7542d0645df91",
-      "styleAttributes": {
-      },
-      "text": "### Glossary\n\n- **URL (Unfiorm Resource Locator)** - complete address for any resource on the internet, like a street address for web content. A URL like `https://api.example.com/users/123?format=json` contains several parts: the protocol (https), the domain (api.example.com), the path (/users/123), and query parameters (?format=json)\n- **Endpoint** - This is a specific URL where your API can receive requests and send back responses. If your API is like a restaurant, endpoints are like the different items on the menu. Each endpoint typically handles one specific function, such as `/users` for getting user data or `/orders` for managing orders. The combination of an HTTP method (GET, POST, etc.) and a URL path creates a unique endpoint\n- **HTTP Methods (Verbs)** - these tell the server what kind of action you want to perform. GET, POST, PUT, PATCH, DELETE\n- **Request and Response** (analogy: question-answer conversation)\n- **Headers** - these are like metadata attached to both requests and responses, providing additional information about the message being sent (Content-Type, Authorization, User-Agent, ...)\n- **Status Codes** - tell you what happened with your request: 200s success (200 OK, 201 Created), 300s redirection, 400s client errors, 500s server errors\n- **JSON (JavaScript Object Notation)** -  `{\"name\": \"John\", \"age\": 30, \"active\": true}`\n- **API (Application Programming Interface)** - a set of rules and specifications that define how different software components can communicate with each other. When we talk about web APIs, we usually mean REST APIs or similar systems that let different applications exchange data over the internet. An API is like a contract that specifies what requests you can make and what responses you'll get back\n- **REST (Representation State Transfer)** - architectural style for designing web APIs that uses standard HTTP methods and follows certain principles. RESTful APIs treat everything as resources (like users, products, or orders) that can be identified by URLs and manipulated using HTTP methods. The beauty of REST is its simplicity and the way it leverages existing web standards.\n- **Client and Server**\n- **Middleware** - This refers to software that sits between different parts of your application, processing requests and responses as they flow through your system\n- **Session and State** - HTTP is stateless by nature, meaning each request is independent and doesn't remember previous requests. Sessions are a way to maintain state across multiple requests from the same user, typically by using cookies or tokens. This allows applications to remember that you're logged in, what's in your shopping cart, or your user preferences across different page visits.\n- **Cookies** - small pieces of data that servers send to browsers, which the browsers then send back with future requests to the same domain. Cookies are commonly used for maintaining user sessions, remembering preferences, or tracking user behavior\n- **Authentication & Authorization** - Authentication answers \"who are you?\" while authorization answers \"what are you allowed to do?\" Authentication typically involves checking credentials like usernames and passwords, while authorization involves checking permissions and roles.\n- **CORS (Cross-Origin Resource Sharing)** - a security feature implemented by web browsers that controls which websites can make requests to your API. By default, browsers block requests from one domain to another (like from example.com to api.otherdomain.com) unless the receiving server explicitly allows it through CORS headers\n- **Webhook** - a way for one application to automatically notify another application when something happens, rather than the second application constantly checking for updates\n- **Database and ORM** - Databases store your application's persistent data, while an ORM (Object-Relational Mapping) is a tool that lets you work with database data using your programming language's objects instead of writing raw SQL queries\n- **Environment Variables** - values that exist outside your code, typically used for configuration settings that change between different environments\n- **SSL/TLS and HTTPS** - SSL (Secure Sockets Layer) and its successor TLS (Transport Layer Security) are protocols that encrypt data traveling between clients and servers. HTTPS is HTTP over an encrypted connection, ensuring that sensitive data like passwords or credit card numbers can't be intercepted. The little lock icon in your browser indicates that HTTPS is being used",
-      "type": "text",
-      "width": 1036,
-      "x": -2064,
-      "y": -1074
     },
     {
       "height": 1423,
@@ -166,6 +133,39 @@
       "width": 1503,
       "x": 2694,
       "y": 3174
+    },
+    {
+      "height": 909,
+      "id": "35b54aba03edaddf",
+      "styleAttributes": {
+      },
+      "text": "### Payload\n- Payload - данные, которые клиент отправляет серверу в теле HTTP-запроса\n- Не во всех методах есть payload (e.g. GET без тела)\n- Часто это форматированный текст - JSON, XML, form-data, бинарные данные\n\nПример payload\n\nPOST /api/user:\n```json\n{\n\t\"name\": \"Alice\",\n\t\"email\": \"alice@example.com\"\n}\n```\nВ заголовках тип содержимого:\n```pgsql\nContent-Type: application/json\n```\n\nПример запроса:\n\n```makefile\nPOST /api/user HTTP/1.1\nHost: example.com\nContent-Type: application/json\nContent-Length: 47\n\n{\n  \"name\": \"Alice\",\n  \"email\": \"alice@example.com\"\n}\n```\n\n- Клиент формирует байтовый поток, где тело (payload) идёт после заголовков\n- Этот поток дробится на TCP-сегменты и отправляется на сервер\n- Сервер собирает сегменты, читает HTTP-запрос, парсит payload",
+      "type": "text",
+      "width": 1210,
+      "x": -660,
+      "y": 2417
+    },
+    {
+      "height": 1072,
+      "id": "fe67d292a51a0c0b",
+      "styleAttributes": {
+      },
+      "text": "### HTTP методы\n| Метод   | Назначение                    | Краткое описание                                                                                  | Пример запроса                                 | Пояснение к примеру                                                           |\n| ------- | ----------------------------- | ------------------------------------------------------------------------------------------------- | ---------------------------------------------- | ----------------------------------------------------------------------------- |\n| GET     | Запрос ресурса                | Клиент просит получить данные с сервера. Обычно без тела запроса.                                 | `GET /api/users/123 HTTP/1.1`                  | Получить данные пользователя с id=123 без отправки тела запроса               |\n| POST    | Создание ресурса или действие | Клиент отправляет данные на сервер (создание ресурса или выполнение действия). Есть тело (payload | `POST /api/users HTTP/1.1` с JSON-payload <br> | Создать нового пользователя, отправляя его данные в теле запроса.             |\n| PUT     | Полное обновление ресурса     | Клиент заменяет ресурс на сервере полностью. Обычно с телом запроса.                              | `DELETE /api/users/123 HTTP/1.1`               | Удалить пользователя с id=123. Обычно без тела запроса.                       |\n| PATCH   | Частичное обновление ресурса  | Клиент частично обновляет ресурс, передавая изменения. С телом запроса                            |                                                |                                                                               |\n| DELETE  | Удаление ресурса              | Клиент просит удалить ресурс. Обычно без тела                                                     |                                                |                                                                               |\n| HEAD    | Запрос заголовков ресурса     | Как GET, но без тела ответа - только заголовки                                                    | `HEAD /api/users/123 HTTP/1.1`                 | Получить только заголовки ответа (например, проверить, существует ли ресурс). |\n| OPTIONS | Запрос поддерживаемых методов | Клиент узнает, какие методы поддерживает сервер для ресурса                                       | `OPTIONS /api/users HTTP/1.1`                  | Узнать, какие HTTP методы поддерживает сервер для этого ресурса.              |\n",
+      "type": "text",
+      "width": 1210,
+      "x": -660,
+      "y": 1323
+    },
+    {
+      "height": 1752,
+      "id": "2fd13f5310f707ba",
+      "styleAttributes": {
+      },
+      "text": "### HTTP\nHTTP (HyperText Transfer Protocol) - essentially a conversation between web browsers and web severs\n\n- The **request line** tells the server what you want to do and where you want to do it:\n\t- HTTP method (like GET, POST)\n\t- Path\n\t- HTTP version\n- The **headers** provide additional context about request (what type of content accept, what browser using, auth info)\n- The **body** (optional) contains data you're sending to the server (form submissions, file uploads)\n\n### Making some requests\n```python\nresponse = requests.get(\"https://httpbin.org/headers\")\n```\n```markdown\nHeaders our browser sent:\nAccept: */*                            # что клиент может принять в ответ - здесь любой тип контента\nAccept-Encoding: gzip, deflate         # какие способы сжатия клиент понимает\nHost: httpbin.org                      # какой домент клиент хочет запросить\nUser-Agent: python-requests/2.32.3     # кто делает запрос\nX-Amzn-Trace-Id: Root=1-683b3986-16d55c1f3f40c9f922e197ff # заголовок от инфраструктуры Amazon\n```\n\n### GET\n- Base URL: `https://example.com/api/users`\n- Query Parameters: `?name=John&age=25&city=Boston`\n- Headers: Authentication tokens, content preferences, browser info\n```\nGET /api/users?name=John&age=25&city=Boston HTTP/1.1\nHost: example.com\nUser-Agent: Mozilla/5.0...\nAuthorization: Bearer abc123\nAccept: application/json\n```\n\nData typically sent:\n- Search terms\n- Filter criteria\n- Page numbers\n- Sorting preferences\n- User preferences\n- API keys\n\n### POST \nLocation of data: primarily in the request body\n**Components:**\n- **URL**: Just the endpoint `https://example.com/api/users`\n- **Headers**: Content type, auth, etc.\n- **Body**: The actual data payload\n\n```\nPOST /api/users HTTP/1.1\nHost: example.com\nContent-Type: application/json\nContent-Length: 156\nAuthorization: Bearer abc123\n\n{\n  \"name\": \"John\",\n  \"email\": \"john@example.com\",\n  \"age\": 25,\n  \"address\": {\n    \"city\": \"Boston\",\n    \"zip\": \"02101\"\n  }\n}\n```",
+      "type": "text",
+      "width": 1210,
+      "x": -660,
+      "y": -685
     }
   ]
 }

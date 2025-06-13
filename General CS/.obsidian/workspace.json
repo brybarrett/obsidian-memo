@@ -13,15 +13,15 @@
             "state": {
               "type": "canvas",
               "state": {
-                "file": "Algorithms.canvas",
+                "file": "Strivers.canvas",
                 "viewState": {
-                  "x": -1919.5,
-                  "y": 1080,
-                  "zoom": -3.259250329056948
+                  "x": 238.5,
+                  "y": 760.5,
+                  "zoom": -1.558427866105693
                 }
               },
               "icon": "lucide-layout-dashboard",
-              "title": "Algorithms"
+              "title": "Strivers"
             }
           }
         ]
@@ -171,8 +171,9 @@
   },
   "active": "96fb252da931af83",
   "lastOpenFiles": [
-    "Strivers.canvas",
     "Leetcode.canvas",
+    "Algorithms.canvas",
+    "Strivers.canvas",
     "Welcome.md"
   ]
 }
