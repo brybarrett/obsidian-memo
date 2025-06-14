@@ -12,8 +12,8 @@ Model: GPT-4o mini
 Weather in Moscow (2025-06-14, 20:30)
 
 - 🌡️ Temperature: 15.3° (feels like 15.3°)
-- 💨 Wind: northern breeze
+- 💨 Wind: northern breeze at 18.4 kph
 - 💧 Humidity: 82%
 - 🌥️ Condition: partly cloudy 
 - 📉 Pressure: 1010 mb
-- 🌞 UV index: super chill UV 0.1
+- 🌞 UV index: super low UV 0.1
