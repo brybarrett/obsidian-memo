@@ -8,11 +8,11 @@ Weather API: [weatherapi.com](https://www.weatherapi.com/)
 
 ---
 
-Weather in Moscow (2025-06-14, 20:15)
+Weather in Moscow (2025-06-14, 20:30)
 
 - 🌡️ Temperature: 15.3° (feels like 15.3°)
 - 💨 Wind: northern breeze
 - 💧 Humidity: 82%
-- 🌤️ Condition: partly cloudy 
+- 🌥️ Condition: partly cloudy 
 - 📉 Pressure: 1010 mb
-- 🌞 UV index: super chill UV 0.1
+- 🌞 UV index: super soft UV 0.1
