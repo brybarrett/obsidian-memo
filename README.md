@@ -9,8 +9,8 @@ The following section of this README is generated with AI and periodically updat
 Weather in Moscow (2025-06-14, 17:00)
 
 - 🌡️ Temperature: 16.2° (feels like 16.2°)
-- 💨 Wind: northern breeze 
+- 💨 Wind: northern gusts
 - 💧 Humidity: 82%
 - 🌩️ Condition: moderate to heavy rain with thunder 
 - 📉 Pressure: 1008 mb
-- 🌞 UV index: light UV 1.1
+- 🌞 UV index: low UV 1.1
