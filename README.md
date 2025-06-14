@@ -2,15 +2,16 @@
 
 Hi there! 👋 \
 At first, this project was just a simple automatic backup of my Obsidian files using Bash and cron — but then I decided to play around with LLM integration. \
-The following section of this README is generated with AI and periodically updated.
+The following section of this README is generated with AI and periodically updated. The same goes for commit messages, which are also generated automatically.
 
+Weather API: https://www.weatherapi.com/ 
 ---
 
-Weather in Moscow (2025-06-14, 18:15)
+Weather in Moscow (2025-06-14, 19:00)
 
-- 🌡️ Temperature: 16.2° (feels like 16.2°)
-- 💨 Wind: northern gusts 
+- 🌡️ Temperature: 16.1° (feels like 16.1°)
+- 💨 Wind: northern breeze
 - 💧 Humidity: 77%
-- 🌩️ Condition: heavy rain with thunder 
+- 🌤️ Condition: partly cloudy 
 - 📉 Pressure: 1009 mb
-- 🌞 UV index: soft UV 0.6
+- 🌞 UV index: soft UV 0.3
