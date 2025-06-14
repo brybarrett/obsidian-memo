@@ -5,6 +5,7 @@ At first, this project was just a simple automatic backup of my Obsidian files u
 The following section of this README is generated with AI and periodically updated. The same goes for commit messages, which are also generated automatically.
 
 Weather API: [weatherapi.com](https://www.weatherapi.com/)
+Model: GPT-4o mini
 
 ---
 
@@ -15,4 +16,4 @@ Weather in Moscow (2025-06-14, 20:30)
 - 💧 Humidity: 82%
 - 🌥️ Condition: partly cloudy 
 - 📉 Pressure: 1010 mb
-- 🌞 UV index: super soft UV 0.1
+- 🌞 UV index: super chill UV 0.1
