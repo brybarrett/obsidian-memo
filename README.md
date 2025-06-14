@@ -6,5 +6,5 @@ The following section of this README is generated with AI and periodically updat
 
 ---
 
-Weather in Moscow (2025-06-14, 16:30)  
-🌡️ 15.3° (feels like 15.3°) | 💨 northern breeze | 💧 82% humidity | ⛈️ patchy light rain with thunder | 📉 pressure 1008 mb | 🌞 UV 0.8
+Weather in Moscow (2025-06-14, 16:45)  
+🌡️ 16.4° (feels like 16.4°) | 💨 northern gusts | 💧 82% humidity | ⛈️ heavy rain & thunder | 📉 pressure 1008 mb | 🌞 mild UV 0.8
